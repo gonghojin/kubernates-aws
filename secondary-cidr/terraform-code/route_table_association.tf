@@ -7,3 +7,13 @@ resource "aws_route_table_association" "tfer--subnet-06563c9c5cdc9cd0e" {
   route_table_id = aws_route_table.tfer--rtb-2.id
   subnet_id      = aws_subnet.tfer--subnet-046829720e0f62265.id
 }
+
+resource "aws_route_table_association" "test-rta-eks-pods-a" {
+  route_table_id = aws_route_table.test-rt-eks-pods-a.id
+  subnet_id      = aws_subnet.public-subnet-eks-pods-a.id
+}
+
+resource "aws_route_table_association" "test-rta-eks-pods-c" {
+  route_table_id = aws_route_table.test-rt-eks-pods-c.id
+  subnet_id      = aws_subnet.public-subnet-eks-pods-c.id
+}
